@@ -19,7 +19,7 @@ def load_sentiment_model():
     return model, tokenizer
 
 def get_news_data(t):
-    newsapi = NewsApiClient(api_key='d1ded54aa51341df924ea640962596f8')
+    newsapi = NewsApiClient(api_key=st.secrets["newsapi"])
 
     all_articles = newsapi.get_everything(q=f'{t.info["symbol"]} OR {t.info["shortName"]}',
                                           domains='forbes.com,marketwatch.com',
